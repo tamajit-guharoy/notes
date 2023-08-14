@@ -9,6 +9,27 @@ EBS volume is characterized by  size in Gb , IPOS and throughput.And we will be 
 An ec2 instance can be attached to multiple EBS volume.
 
 
+
+df -h  #shows all volumes mount info
+
+newly attached disks and their partitions:
+lsblk
+
+
+mkfs -t {xfs|ext4} /dev/xvdf
+
+
+check filesystem of a disk
+file -s /dev/xvdf
+
+
+mounting:
+mkdir -p /apps/mypath
+mount /dev/xvdf /apps/mypath
+df -h
+
+
+
 EBS volume types:
 1)GP2(SSD)=>
 balance price and performance(Most common)
